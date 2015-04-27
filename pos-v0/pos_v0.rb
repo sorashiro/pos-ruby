@@ -6,18 +6,17 @@ class Pos
 
     inputs.each do |input|
       sub_total = input[:price] * input[:count]
-      text += "名称: #{input[:name]}, 数量: #{input[:count]}#{input[:unit]}, "+ 
+      text += "名称: #{input[:name]}, 数量: #{input[:count]}#{input[:unit]}, "+
               "单价: #{format('%.2f', input[:price])}(元), 小计: #{format('%.2f', sub_total)}(元)\n"
       total += sub_total
-    end 
+    end
 
     header = "***<没钱赚商店>购物清单***\n"
     footer = "----------------------\n"+
              "总计: #{format('%.2f', total)}(元)\n"+
              "**********************"
     list = header + text + footer
-    list
-  end 
+  end
 end
       inputs = [
         {
@@ -44,4 +43,4 @@ end
       ]
 
   pos = Pos.new
-  puts pos.print_inventory(inputs) 
+  puts pos.print_inventory(inputs)
