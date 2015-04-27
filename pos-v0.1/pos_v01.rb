@@ -27,7 +27,6 @@ class Pos
              "总计: #{format('%.2f', total)}(元)\n"+
              "**********************"
     list = header + text + footer
-    list
   end
 end
 
