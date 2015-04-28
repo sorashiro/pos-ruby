@@ -27,7 +27,7 @@ describe "print_inventory" do
     '----------------------\n' +
     '总计: 51.00(元)\n' +
     '节省: 7.50(元)\n' +
-    '**********************';
+    '**********************'
 
     assert_equal(expect_text, print_inventory(inputs))
   end
