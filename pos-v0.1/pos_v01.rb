@@ -1,33 +1,31 @@
-class Pos
-  def print_inventory(inputs)
-    text = ""
-    total = 0
-    items = inputs.uniq
+def print_inventory(inputs)
+  text = ""
+  total = 0
+  items = inputs.uniq
 
-    inputs.each do |input|
-      total += input[:price]
-
-      items.each do |item|
-        item[:count] = item[:count] || 0
-
-        if input[:barcode] == item[:barcode] then
-          item[:count] += 1
-        end
-      end
-    end
+  inputs.each do |input|
+    total += input[:price]
 
     items.each do |item|
-      sub_total = item[:price] * item[:count]
-      text += "名称: #{item[:name]}, 数量: #{item[:count]}#{item[:unit]}, "+
-              "单价: #{format('%.2f', item[:price])}(元), 小计: #{format('%.2f', (item[:price] * item[:count]))}(元)\n"
-    end
+      item[:count] = item[:count] || 0
 
-    header = "***<没钱赚商店>购物清单***\n"
-    footer = "----------------------\n"+
-             "总计: #{format('%.2f', total)}(元)\n"+
-             "**********************"
-    list = header + text + footer
+      if input[:barcode] == item[:barcode] then
+        item[:count] += 1
+      end
+    end
   end
+
+  items.each do |item|
+    sub_total = item[:price] * item[:count]
+    text += "名称: #{item[:name]}, 数量: #{item[:count]}#{item[:unit]}, "+
+            "单价: #{format('%.2f', item[:price])}(元), 小计: #{format('%.2f', (item[:price] * item[:count]))}(元)\n"
+  end
+
+  header = "***<没钱赚商店>购物清单***\n"
+  footer = "----------------------\n"+
+           "总计: #{format('%.2f', total)}(元)\n"+
+           "**********************"
+  list = header + text + footer
 end
 
 inputs = [
@@ -80,5 +78,4 @@ inputs = [
                 price: 2.00
             }
           ]
-  pos = Pos.new
-  puts pos.print_inventory(inputs)
+puts print_inventory(inputs)
