@@ -9,7 +9,6 @@ describe "print_inventory" do
                   name: '可口可乐',
                   unit: '瓶',
                   price: 3.00
-
               },
               {
                   barcode: 'ITEM000000',
