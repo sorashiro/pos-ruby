@@ -1,5 +1,5 @@
 require "minitest/autorun"
-require_relative "pos"
+require_relative "pos_v1"
 
 describe "print_inventory" do
   inputs = [
