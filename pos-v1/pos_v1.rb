@@ -18,7 +18,6 @@ def print_inventory(inputs)
 
     items.each do |item|
       if cart_item[0] == item[:barcode]
-        single_item = {}
         single_item = Marshal.load(Marshal.dump(item))
         single_item[:count] = cart_item[1] || 1
 
