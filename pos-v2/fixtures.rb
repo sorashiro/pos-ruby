@@ -1,53 +1,23 @@
+require_relative "model/item"
+require_relative "model/promotion"
+
 def load_all_items
   return [
-          {
-              barcode: 'ITEM000000',
-              name: '可口可乐',
-              unit: '瓶',
-              price: 3.00
-          },
-          {
-              barcode: 'ITEM000001',
-              name: '雪碧',
-              unit: '瓶',
-              price: 3.00
-          },
-          {
-              barcode: 'ITEM000002',
-              name: '苹果',
-              unit: '斤',
-              price: 5.50
-          },
-          {
-              barcode: 'ITEM000003',
-              name: '荔枝',
-              unit: '斤',
-              price: 15.00
-          },
-          {
-              barcode: 'ITEM000004',
-              name: '电池',
-              unit: '个',
-              price: 2.00
-          },
-          {
-              barcode: 'ITEM000005',
-              name: '方便面',
-              unit: '袋',
-              price: 4.50
-          }
-         ];
+      Item.new('ITEM000000', '可口可乐', '瓶', 3.00),
+      Item.new('ITEM000001', '雪碧', '瓶', 3.00),
+      Item.new('ITEM000002', '苹果', '斤', 5.50),
+      Item.new('ITEM000003', '荔枝', '斤', 15.00),
+      Item.new('ITEM000004', '电池', '个', 2.00),
+      Item.new('ITEM000005', '方便面', '袋', 4.50)
+  ]
 end
 
 def load_promotions
   return [
-    {
-        type: 'BUY_TWO_GET_ONE_FREE',
-        barcodes: [
-            'ITEM000000',
-            'ITEM000001',
-            'ITEM000005'
-        ]
-    }
-  ];
+    Promotion.new('BUY_TWO_GET_ONE_FREE', [
+      'ITEM000000',
+      'ITEM000001',
+      'ITEM000005'
+    ])
+  ]
 end

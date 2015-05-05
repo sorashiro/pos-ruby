@@ -29,6 +29,6 @@ describe "print_inventory" do
     "节省: 7.50(元)\n" +
     "**********************"
 
-    assert_equal(expect_text, print_inventory(inputs))
+    assert_equal(expect_text, main(inputs))
   end
 end
